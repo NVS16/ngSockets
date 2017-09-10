@@ -1,0 +1,12 @@
+<p>Enter Name:</p>
+<input type = "text" [(ngModel)] = "obj.name">
+<p>Enter Message:</p>
+<input type = "text" [(ngModel)] = "obj.msg">
+<button (click) = "submitMsg()" type = "submit">Send</button>
+
+
+<ul style = "list-style-type: none">
+  <li *ngFor = "let newMsg of messages">
+    <b>{{ newMsg.name }}</b> {{ newMsg.msg }}
+  </li>
+</ul>

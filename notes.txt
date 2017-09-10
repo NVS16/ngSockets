@@ -1,0 +1,14 @@
+Client Side:
+    1 import * as io from 'socket.io-client'; in the component.ts file.
+    2 var socket = io(url);
+    3 this.socket.on('event', function(data){}); // for listening to an event
+    4 this.socket.emit('event', data); // for emiting an event
+
+Server Side: 
+    1 var server = require("http").createServer(app);
+    2 var io = require("socket.io")(server);
+    3 server.listen(port);
+    4 io.on('connection', function(socket){
+        socket.on('event', function(data){}); // listening to an event
+        socket.emit('event', data); // emiting an event
+    });
